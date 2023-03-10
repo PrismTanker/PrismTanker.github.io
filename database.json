@@ -1,0 +1,78 @@
+{
+    "path": "cards",
+    "environment": {
+        "path": "env",
+        "default": {
+            "name": "default_test",
+            "desc": "Test autoinclude",
+            "img": "windows-xp-header-bliss.png"
+        },
+        "cards": [
+            {
+                "name": "etest1",
+                "desc": "Description",
+                "img": "Tharsis_and_Valles_Marineris_-_Mars_Orbiter_Mission_(30055660701).png"
+            },
+            {
+                "name": "etest2",
+                "desc": "Description",
+                "img": "download.png"
+            },
+            {
+                "name": "etest3",
+                "desc": "Description",
+                "img": "mixed signals.png"
+            }
+        ]
+    },
+    "objective": {
+        "path": "obj",
+        "default": {
+            "name": "default_otest",
+            "desc": "Test autoinclude",
+            "img": "p.png"
+        },
+        "cards": [
+            {
+                "name": "otest1",
+                "desc": "AAAA",
+                "img": "fetchimage.png"
+            },
+            {
+                "name": "0test2",
+                "desc": "BBBB",
+                "img": "983423867055923210.png"
+            },
+            {
+                "name": "otest3",
+                "desc": "Y/N",
+                "img": "3f23r3.png"
+            }
+        ]
+    },
+    "wildcard": {
+        "path": "wc",
+        "default": {
+            "name": "Amogus",
+            "desc": "Amogus",
+            "img": "Susremaster.png"
+        },
+        "cards": [
+            {
+                "name": "wtest1",
+                "desc": "sus",
+                "img": "a.png"
+            },
+            {
+                "name": "wtest2",
+                "desc": "sus",
+                "img": "amogus_by_jayconian_dek83o0-fullview.png"
+            },
+            {
+                "name": "etest3",
+                "desc": "Description",
+                "img": "ab67616d00001e020dc5ff98b62423f106eac64b.png"
+            }
+        ]
+    }
+}

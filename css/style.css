@@ -1,0 +1,24 @@
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    position: fixed;
+    top: 0; /* Fixes inheriting margin */
+
+    height: 60px;
+    background: #f70505;
+}
+
+header > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+main {
+    /* Dont fall under header */
+    margin-top: 60px;
+
+    background: #4105f7;
+}
