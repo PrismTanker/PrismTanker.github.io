@@ -1,14 +1,25 @@
-const data_json_path = "database.json"
+const DATAPATH = "database.json";
+const DEFAULTSELECTIONCOUNT = 1;
+// Fixed headings in json database
 
 $.holdReady(true) //Corresponding Release in below ajax callback
-var card_data;
+var cardData;
 $.ajax({
-    url: data_json_path,
+    url: DATAPATH,
     async: true, //Asynch false depreciated, using holdReady method instead
     dataType: 'json',
     success: function (json) {
-        card_data = JSON.parse(json);
-        console.log(card_data)
+        cardData = json;
+
+        // Set default selected status for each card
+        for (set in cardData) {
+            cardSet = cardData[set].cards; //.cards and ['cards'] are equivilant
+            for (cardIndex in cardSet) {
+                card = cardSet[cardIndex];
+                card.selectCount = DEFAULTSELECTIONCOUNT;
+            }            
+        }
+
         $.holdReady(false)
     }
 });

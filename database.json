@@ -1,6 +1,6 @@
 {
     "path": "cards",
-    "environment": {
+    "Environments": {
         "path": "env",
         "default": {
             "name": "default_test",
@@ -35,7 +35,7 @@
             }
         ]
     },
-    "objective": {
+    "Objectives": {
         "path": "obj",
         "default": {
             "name": "default_otest",
@@ -70,7 +70,7 @@
             }
         ]
     },
-    "wildcard": {
+    "Wildcards": {
         "path": "wc",
         "default": {
             "name": "Amogus",
