@@ -6,7 +6,10 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="css/style.css"> 
         <!-- JQuery 3.6.4 Slim (Minified, if need to debug change to uncompressed) -->
-        <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script> -->
+        <!-- Slim doesn't include Ajax -_- -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+        <script src="js/load_data.js"></script>
     </head>
 
     <body>
@@ -31,7 +34,7 @@
             <!-- Hidden after start button pressed -->
             <div id="initial_prompt">
                 <h1>Select your card pool using the button above, then:</h1>
-                <button onclick="clear_prompt()">Select Scenareo</button>
+                <button>Select Scenareo</button> <!-- Handlers defined in onReady -->
             </div>
 
             <!-- Hidden until start button pressed -->
@@ -98,7 +101,7 @@
             
         </main>
 
-
         <script src="js/scenareo_selection.js"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>
