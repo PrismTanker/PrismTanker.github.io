@@ -5,23 +5,33 @@
         "default": {
             "name": "default_test",
             "desc": "Test autoinclude",
-            "img": "windows-xp-header-bliss.png"
+            "img": "0.png"
         },
         "cards": [
             {
                 "name": "etest1",
                 "desc": "Description",
-                "img": "Tharsis_and_Valles_Marineris_-_Mars_Orbiter_Mission_(30055660701).png"
+                "img": "1.png"
             },
             {
                 "name": "etest2",
                 "desc": "Description",
-                "img": "download.png"
+                "img": "2.png"
             },
             {
                 "name": "etest3",
                 "desc": "Description",
-                "img": "mixed signals.png"
+                "img": "3.png"
+            },
+            {
+                "name": "etest4",
+                "desc": "Descriwption",
+                "img": "4.png"
+            },
+            {
+                "name": "etest5",
+                "desc": "Descrassiwption",
+                "img": "5.png"
             }
         ]
     },
@@ -30,23 +40,33 @@
         "default": {
             "name": "default_otest",
             "desc": "Test autoinclude",
-            "img": "p.png"
+            "img": "0.png"
         },
         "cards": [
             {
                 "name": "otest1",
                 "desc": "AAAA",
-                "img": "fetchimage.png"
+                "img": "1.png"
             },
             {
                 "name": "0test2",
                 "desc": "BBBB",
-                "img": "983423867055923210.png"
+                "img": "2.png"
             },
             {
                 "name": "otest3",
                 "desc": "Y/N",
-                "img": "3f23r3.png"
+                "img": "3.png"
+            },
+            {
+                "name": "otest4",
+                "desc": "Y/N",
+                "img": "4.png"
+            },
+            {
+                "name": "otest5",
+                "desc": "Y/N",
+                "img": "5.png"
             }
         ]
     },
@@ -55,23 +75,33 @@
         "default": {
             "name": "Amogus",
             "desc": "Amogus",
-            "img": "Susremaster.png"
+            "img": "0.png"
         },
         "cards": [
             {
                 "name": "wtest1",
                 "desc": "sus",
-                "img": "a.png"
+                "img": "1.png"
             },
             {
                 "name": "wtest2",
                 "desc": "sus",
-                "img": "amogus_by_jayconian_dek83o0-fullview.png"
+                "img": "2.png"
             },
             {
                 "name": "etest3",
                 "desc": "Description",
-                "img": "ab67616d00001e020dc5ff98b62423f106eac64b.png"
+                "img": "3.png"
+            },
+            {
+                "name": "Wtest4",
+                "desc": "Description",
+                "img": "4.png"
+            },
+            {
+                "name": "2test",
+                "desc": "Description",
+                "img": "5.png"
             }
         ]
     }

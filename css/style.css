@@ -10,7 +10,8 @@ header {
     background: #f70505;
 }
 
-header > div {
+
+.horizontal {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -21,4 +22,9 @@ main {
     margin-top: 60px;
 
     background: #4105f7;
+}
+
+/* Initially Hidden items */
+#the_tool, #results_display {
+    display: none;
 }

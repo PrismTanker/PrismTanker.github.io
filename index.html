@@ -5,16 +5,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="css/style.css"> 
+        <!-- JQuery 3.6.4 Slim (Minified, if need to debug change to uncompressed) -->
+        <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
     </head>
 
     <body>
-        <!-- Navigation Header -->
+        <!-- Fixed Navigation Header -->
         <header>
             <button id="card_selection_button" type="button"> Card Selection </button>
             <h1>Wildspace Scenareo Selector</h1>
             <h2>Legacy Project Links:</h2>
             
-            <div>
+            <div class = "horizontal">
                 <a href="https://x2po.org/">
                     <h3>Home Page</h3>
                 </a>
@@ -26,61 +28,77 @@
         </header>
 
         <main>
-            According to all known laws
-of aviation,
+            <!-- Hidden after start button pressed -->
+            <div id="initial_prompt">
+                <h1>Select your card pool using the button above, then:</h1>
+                <button onclick="clear_prompt()">Select Scenareo</button>
+            </div>
 
-  
-there is no way a bee
-should be able to fly.
+            <!-- Hidden until start button pressed -->
+            <div id="the_tool">
+                <h1>Eliminate cards by selecting them</h1>
+                
+                <!-- Separated Card Sets -->
+                <div id="card_selector">
+                    <div class="tool_set" id="envs">
+                        <h2>Environments</h2>
+                        <div class="card_row horizontal">
+                            <img>
+                            <img>
+                            <img>
+                            <img>
+                        </div>
+                    </div>
 
-  
-Its wings are too small to get
-its fat little body off the ground.
+                    <div class="tool_set" id="objs">
+                        <h2>Objectives</h2>
+                        <div class="card_row horizontal">
+                            <img>
+                            <img>
+                            <img>
+                            <img>
+                        </div>
+                    </div>
 
-  
-The bee, of course, flies anyway
+                    <div class="tool_set" id="wcs">
+                        <h2>Wildcards</h2>
+                        <div class="card_row horizontal">
+                            <img>
+                            <img>
+                            <img>
+                            <img>
+                        </div>
+                    </div>
+                </div>
 
-  
-because bees don't care
-what humans think is impossible.
+                <!-- Results display hidden until selection complete -->
+                <div id="results_display" class="horizontal">
+                    <div>
+                        <h2>Environment</h2>
+                        <img>
+                    </div>
+                    
+                    <div>
+                        <h2>Objective</h2>
+                        <img>
+                    </div>
 
-  
-Yellow, black. Yellow, black.
-Yellow, black. Yellow, black.
+                    <div>
+                        <h2>Wildcard</h2>
+                        <img>
+                    </div>
+                </div>
 
-  
-Ooh, black and yellow!
-Let's shake it up a little.
+                <div class = "horizontal">
+                    <h3>You can reselect cards and start again at any time</h3>
+                    <button>Reset Selection</button>
+                </div>
+            </div>
 
-  
-Barry! Breakfast is ready!
-
-  
-Ooming!
-
-  
-Hang on a second.
-
-  
-Hello?
-
-  
-- Barry?
-- Adam?
-
-  
-- Oan you believe this is happening?
-- I can't. I'll pick you up.
-
-  
-Looking sharp.
-
-  
-Use the stairs. Your father
-paid good money for those.
-
-  
-Sorry. I'm excited.
+            
         </main>
+
+
+        <script src="js/scenareo_selection.js"></script>
     </body>
 </html>
