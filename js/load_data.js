@@ -1,6 +1,8 @@
 const DATAPATH = "database.json";
 const DEFAULTSELECTIONCOUNT = 1;
-// Fixed headings in json database
+
+//To be skipped in iteration all over the shop
+PATH = "path"
 
 $.holdReady(true) //Corresponding Release in below ajax callback
 var cardData;
@@ -13,11 +15,12 @@ $.ajax({
 
         // Set default selected status for each card
         for (set in cardData) {
-            cardSet = cardData[set].cards; //.cards and ['cards'] are equivilant
-            for (cardIndex in cardSet) {
-                card = cardSet[cardIndex];
-                card.selectCount = DEFAULTSELECTIONCOUNT;
-            }            
+            if (set != PATH) {
+                cardSet = cardData[set].cards; //.cards and ['cards'] are equivilant
+                for (cardIndex in cardSet) {
+                    cardSet[cardIndex].selectCount = DEFAULTSELECTIONCOUNT;
+                } 
+            }           
         }
 
         $.holdReady(false)

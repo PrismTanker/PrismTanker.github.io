@@ -1,5 +1,5 @@
 {
-    "path": "cards",
+    "path": "images/cards",
     "Environments": {
         "path": "env",
         "default": {
