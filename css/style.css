@@ -28,3 +28,18 @@ main {
 #the_tool, #results_display {
     display: none;
 }
+
+.card_row > img {
+    width: 20%;
+    height: auto;
+}
+
+.result {
+    width: 30%;
+}
+
+.result > img {
+    width: 100%;
+    height: auto;
+}
+
