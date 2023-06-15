@@ -3,15 +3,15 @@ var activeSelection;
 
 function clear_prompt() {
     $("#tool_reset").on("click", init_tool);
-    $("#initial_prompt").css({"display": "none"});
-    $("#the_tool").css({"display": "inline"});
+    $("#initial_prompt").addClass("hidden");
+    $("#the_tool").removeClass("hidden");
     init_tool();
 } 
 
 function init_tool() {
     // Reset tool visibility
-    $("#card_selector").css({"display": "inline"});
-    $("#results_display").css({"display": "none"});
+    $("#card_selector").removeClass("hidden");
+    $("#results_display").addClass("hidden");
 
     //Reset prompts
     $("#the_tool > h1:first-child").html("Eliminate cards by selecting them")
@@ -65,10 +65,7 @@ function init_tool() {
                     "alt": activeSelection[set][i].name,
                     "data-selID": activeSelection[set][i].selectionID //Unique ID to map element back to internal representation
                 });
-                $(this).css({ // Reset card visibility
-                    "display": "inline",
-                    "opacity": 1
-                }); 
+                $(this).removeClass("hidden locked")
             });
             
             // If not set up, configure event handlers while we are here. Apparantly its bad practice to add event handlers to children directly
@@ -87,22 +84,20 @@ function init_tool() {
 
 function selectCard(card, set) {
     if (activeSelection[set].length > 1) {
-        $(card).css({"display": "none"});
+        $(card).addClass("hidden");
         // Remove card from candidates
         activeSelection[set] = activeSelection[set].filter(choice => choice.selectionID != $(card).attr('data-selID'));
 
         if (activeSelection[set].length <= 1) {
             // Store chosen card in results
             $("#".concat(set, "_result > img:first-of-type")).attr({
-                "src": activeSelection[set][0].path, //If we overshoot one we deserve to error
+                "src": activeSelection[set][0].path, //If we overshoot this then we deserve to error
                 "alt": activeSelection[set][0].name
             })
             
             // Apply styling to selected card
             $(card).siblings("img[data-selID=\"".concat(activeSelection[set][0].selectionID, "\"]")).each(function (i) { //Should only contain single element
-                $(this).css({
-                    "opacity": 0.5
-                });
+                $(this).addClass("locked");
             });
 
             activeSelection.remainingSets--;
@@ -115,13 +110,10 @@ function selectCard(card, set) {
 }
 
 function displayResults() {
-    $("#card_selector").css({"display": "none"});
-    $("#results_display").css({"display": "flex"});
+    $("#card_selector").addClass("hidden");
+    $("#results_display").removeClass("hidden");
     $("#the_tool > h1:first-child").html("Selected Scenareo")
     $("#tool_reset").siblings("h3").each(function (i) { // should contain a single element
         $(this).html("Choose another Scenareo")
     });
-
 }
-
-// TODO!!!!!!!!!!!!!!!!!!!! .css applies inline css. replace all calls with class modification and write stylesheets

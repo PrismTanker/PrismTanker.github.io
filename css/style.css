@@ -1,3 +1,7 @@
+.hidden {
+    display: none !important;
+}
+
 header {
     display: flex;
     flex-direction: row;
@@ -25,8 +29,8 @@ main {
 }
 
 /* Initially Hidden items */
-#the_tool, #results_display {
-    display: none;
+#the_tool, #results_display #card_selector {
+    display: inline;
 }
 
 .card_row > img {
@@ -43,3 +47,6 @@ main {
     height: auto;
 }
 
+.locked {
+   opacity: 0.5; 
+}
