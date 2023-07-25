@@ -102,11 +102,12 @@
 
             <!-- Hidden by default, toggled with header button -->
             <div id="card_selector" class="toggled">
+                <p id="invalid_selection_warning" class="warning_text hidden">You must have at least 3 cards selected per category!</p>
                 <h1>Select cards from which to randomly draw</h1>
                 <h2>Click/Tap cards to cycle card count</h2>
                 
                 <!-- Filters -->
-                <div class="horizontal">
+                <div id="filters" class="horizontal">
                     <input id="text_filter" type="text" placeholder="Text filter" form="filter">
 
                     <label for="Environments_filter">Environments</label>
@@ -120,13 +121,11 @@
                 </div>
 
                 <div id="card_display">
-                    <!-- Will be filled by init_browser -->
+                    <!-- Will be filled by initBrowser -->
                 </div>
 
                 <!-- Confirmation and assotated warning -->
                 <div class="horizontal">
-                    <p class="warning_text">You must have at least 3 cards selected per category!</p>
-                    <button id="card_apply">Apply</button>
                 </div>
             </div>
             
