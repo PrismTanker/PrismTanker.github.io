@@ -10,7 +10,7 @@ function clear_prompt() {
 
 function init_tool() {
     // Reset tool visibility
-    $("#card_selector").removeClass("hidden");
+    $("#scenareo_selector").removeClass("hidden");
     $("#results_display").addClass("hidden");
 
     //Reset prompts
@@ -24,8 +24,8 @@ function init_tool() {
         if (set != PATH){  // PATH defined in load_data.js
             // Build weighted set of card indexes
             let selectionIndicies = [];
-            dset = cardData[set];
-            cardSet = dset.cards;
+            let dset = cardData[set];
+            let cardSet = dset.cards;
             for (cardIndex in cardSet) {
                 for (let i = 0; i < cardSet[cardIndex].selectCount; i++){
                     selectionIndicies.push(cardIndex);
@@ -33,15 +33,15 @@ function init_tool() {
             }
 
             // Select distinct cards (mimicking random card draw as close as possible)
-            theChosenOnes = [];
+            let theChosenOnes = [];
             while (theChosenOnes.length < SELECTIONSIZE){
                 if (selectionIndicies.length <= 0) {
                     // Implies a fucky wucky with card selection restrictions
                     throw new Error("Selected Card List Exhausted (This should not happen)");
                 }
 
-                choice = Math.floor(Math.random() * selectionIndicies.length);
-                candidate = selectionIndicies[choice];
+                let choice = Math.floor(Math.random() * selectionIndicies.length);
+                let candidate = selectionIndicies[choice];
                 selectionIndicies.splice(choice, 1); // Remove candidate from list
                 if (!theChosenOnes.includes(candidate)) {
                     theChosenOnes.push(candidate);
@@ -49,8 +49,8 @@ function init_tool() {
             }
 
             // Build Card set
-            rootImgFolder = cardData.path;
-            setFolder = dset.path;
+            let rootImgFolder = cardData.path;
+            let setFolder = dset.path;
             activeSelection.remainingSets++;
             activeSelection[set] = [{"selectionID": 0, "name": dset.default.name, "path": pathJoin([rootImgFolder, setFolder, dset.default.img])}];// Always include base card
             for (i in theChosenOnes) {
@@ -58,7 +58,7 @@ function init_tool() {
             }
 
             // Display cards
-            imgParent = '#'.concat(set, "_tool > .card_row")
+            let imgParent = '#'.concat(set, "_tool > .card_row")
             $(imgParent.concat(" img")).each(function (i) { //Storing and iterating over $(selection) has iterable metadata and goes goofy, use each instead.
                 $(this).attr({ // Remember to wrap things in $ to use JQuery methods
                     "src": activeSelection[set][i].path, // Realistically at this point I should be using a backend database but, uh, No.
@@ -89,7 +89,7 @@ function selectCard(card, set) {
         activeSelection[set] = activeSelection[set].filter(choice => choice.selectionID != $(card).attr('data-selID'));
 
         if (activeSelection[set].length <= 1) {
-            // Store chosen card in results
+            // Send chosen card to results
             $("#".concat(set, "_result > img:first-of-type")).attr({
                 "src": activeSelection[set][0].path, //If we overshoot this then we deserve to error
                 "alt": activeSelection[set][0].name
@@ -110,7 +110,7 @@ function selectCard(card, set) {
 }
 
 function displayResults() {
-    $("#card_selector").addClass("hidden");
+    $("#scenareo_selector").addClass("hidden");
     $("#results_display").removeClass("hidden");
     $("#the_tool > h1:first-child").html("Selected Scenareo")
     $("#tool_reset").siblings("h3").each(function (i) { // should contain a single element

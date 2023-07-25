@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="css/style.css"> 
+        <!-- TODO some missing header stuff -->
         <!-- JQuery 3.6.4 Slim (Minified, if need to debug change to uncompressed) -->
         <!-- <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script> -->
         <!-- Slim doesn't include Ajax -_- -->
@@ -42,11 +43,12 @@
                 <h1>Eliminate cards by selecting them</h1>
                 
                 <!-- Separated Card Sets -->
-                <div id="card_selector">
+                <div id="scenareo_selector">
                     <div class="tool_set" id="Environments_tool">
                         <h2>Environments</h2>
                         <div class="card_row horizontal">
-                            <img>
+                            <!-- Filled out in selectCard -->
+                            <img> <!-- TODO empty img throws warnings-->
                             <img>
                             <img>
                             <img>
@@ -98,10 +100,40 @@
                 </div>
             </div>
 
+            <!-- Hidden by default, toggled with header button -->
+            <div id="card_selector" class="toggled">
+                <h1>Select cards from which to randomly draw</h1>
+                <h2>Click/Tap cards to cycle card count</h2>
+                
+                <!-- Filters -->
+                <div class="horizontal">
+                    <input id="text_filter" type="text" placeholder="Text filter" form="filter">
+
+                    <label for="Environments_filter">Environments</label>
+                    <input id="Environments_filter" type="checkbox" checked="checked" form="filter">
+
+                    <label for="Objectives_filter">Objectives</label>
+                    <input id="Objectives_filter" type="checkbox" checked="checked" form="filter">
+
+                    <label for="Wildcards_filter">Wildcards</label>
+                    <input id="Wildcards_filter" type="checkbox" checked="checked" form="filter">
+                </div>
+
+                <div id="card_display">
+                    <!-- Will be filled by init_browser -->
+                </div>
+
+                <!-- Confirmation and assotated warning -->
+                <div class="horizontal">
+                    <p class="warning_text">You must have at least 3 cards selected per category!</p>
+                    <button id="card_apply">Apply</button>
+                </div>
+            </div>
             
         </main>
 
         <script src="js/scenareo_selection.js"></script>
+        <script src="js/card_selection.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>

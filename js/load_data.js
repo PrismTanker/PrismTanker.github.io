@@ -22,7 +22,11 @@ $.ajax({
                 } 
             }           
         }
-
+        // putting this here for now, probably restructure this when adding languages
+        init_browser()
+        filter_cards()
+        
         $.holdReady(false)
     }
 });
+

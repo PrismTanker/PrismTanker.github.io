@@ -1,4 +1,4 @@
-.hidden {
+.hidden, .toggled { /* toggled allows seperate tracking to hidden */
     display: none !important;
 }
 
@@ -29,7 +29,7 @@ main {
 }
 
 /* Initially Hidden items */
-#the_tool, #results_display #card_selector {
+#the_tool, #results_display, #scenareo_selector, #card_selector {
     display: inline;
 }
 
@@ -47,6 +47,11 @@ main {
     height: auto;
 }
 
-.locked {
+.locked, .unselected {
    opacity: 0.5; 
+}
+
+#card_selector {
+    display: inline;
+    background: greenyellow;
 }
