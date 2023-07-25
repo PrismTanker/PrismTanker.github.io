@@ -59,3 +59,32 @@ main {
 .warning_text {
     color: red;
 }
+
+#card_display {
+    display: grid;
+    column-gap: 2%;
+    grid-template-columns: 23.5% 23.5% 23.5% 23.5%;
+    row-gap: 2%;
+}
+
+.card_button {
+    /* be the nearest parent with static or relative, offset from normal by 0 */
+    position: relative; 
+    /* TODO during selection too other mouse events also */
+    cursor: pointer; 
+}
+
+/* TODO change first/last-child to first/last of type throuhgout */
+.card_button > img:first-child {
+    width: 100%;
+    height: auto;
+}
+
+.card_button > img:last-child {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    
+    width: 20%;
+    height: auto;
+}

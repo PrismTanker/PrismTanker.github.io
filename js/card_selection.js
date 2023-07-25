@@ -6,7 +6,7 @@ const CARDHTML = [
     <img src=\"`, 
     `\" alt=\"`,
     `\">
-    <img src=\"images\\Susremaster.png\" alt=\"Double Selection\">
+    <img src=\"images/double_card.png\" alt=\"Double Selection\">
 </div>` 
 ];
 
