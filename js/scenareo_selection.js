@@ -31,7 +31,7 @@ function init_tool() {
                     selectionIndicies.push(cardIndex);
                 }
             }
-
+            console.log(selectionIndicies)
             // Select distinct cards (mimicking random card draw as close as possible)
             let theChosenOnes = [];
             while (theChosenOnes.length < SELECTIONSIZE){
@@ -43,9 +43,10 @@ function init_tool() {
                 let choice = Math.floor(Math.random() * selectionIndicies.length);
                 let candidate = selectionIndicies[choice];
                 selectionIndicies.splice(choice, 1); // Remove candidate from list
-                if (!theChosenOnes.includes(candidate)) {
-                    theChosenOnes.push(candidate);
-                }
+                // if (!theChosenOnes.includes(candidate)) { Allowing duplicates
+                //     theChosenOnes.push(candidate);
+                // }
+                theChosenOnes.push(candidate);
             }
 
             // Build Card set
