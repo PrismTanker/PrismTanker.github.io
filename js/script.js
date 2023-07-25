@@ -8,5 +8,8 @@ function pathJoin(parts, sep){
 $(document).ready(function () {
     // Make user events availible
     $("#initial_prompt>button").on("click", clear_prompt)
-    console.log("If you are reading this then I somehow got this page to load without a catastrpohic failure")
+    $("#card_selection_button").on("click", toggleSelector)
+    
+
+    console.log("If you are reading this then (theoretically) despite all odds my code loaded without catastropohic failure")
 })
